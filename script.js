@@ -6,30 +6,28 @@ const sub5 = document.querySelector('#subtrair5')
 
 let n = 0
 
-add.addEventListener('click', adicionar)
+function atualizarDisplay(){
+    display.textContent = n
+}
 
-add5.addEventListener('click', adicionar5)
-
-sub.addEventListener('click', subtrair)
-
-sub5.addEventListener('click', subtrair5)
-
-function adicionar(){
+add.addEventListener('click', () => {
     n++
-    display.innerHTML = '<p>'+n+'</p>'
-}
+    atualizarDisplay()
+})
 
-function adicionar5(){
+add5.addEventListener('click', () => {
     n += 5
-    display.innerHTML = '<p>'+n+'</p>'
-}
+    atualizarDisplay()
+})
 
-function subtrair(){
+sub.addEventListener('click', () => {
     n--
-    display.innerHTML = '<p>'+n+'</p>'
-}
+    atualizarDisplay()
+})
 
-function subtrair5(){
+sub5.addEventListener('click', () => {
     n -= 5
-    display.innerHTML = '<p>'+n+'</p>'
-}
+    atualizarDisplay()
+})
+
+atualizarDisplay()
